@@ -18,7 +18,7 @@ func Connect() {
 		wg.Add(1)
 		go func(device string) {
 			defer wg.Done()
-			command := fmt.Sprintf("adb connect %s", device)
+			command := fmt.Sprintf("adb connect %s > /dev/null", device)
 			cmd := exec.Command("sh", "-c", command)
 			cmd.Stdout = os.Stdout
 			cmd.Stderr = os.Stderr
