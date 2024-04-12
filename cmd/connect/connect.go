@@ -7,11 +7,7 @@ import (
 	"sync"
 )
 
-func Connect() {
-	devices := []string{
-		"20.15.200.180:5555",
-	}
-
+func Connect(devices []string) {
 	var wg sync.WaitGroup
 
 	for _, device := range devices {
